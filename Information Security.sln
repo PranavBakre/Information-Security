@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caesar Cipher", "Caesar Cipher\Caesar Cipher.csproj", "{3E2DF604-27B2-4855-AF11-8F64DD3B3999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoAlphabetic Cypher", "MonoAlphabetic Cypher\MonoAlphabetic Cypher.csproj", "{F729F1F0-3C23-4D80-AD0B-0C9049DD7181}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E2DF604-27B2-4855-AF11-8F64DD3B3999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E2DF604-27B2-4855-AF11-8F64DD3B3999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E2DF604-27B2-4855-AF11-8F64DD3B3999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E2DF604-27B2-4855-AF11-8F64DD3B3999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F729F1F0-3C23-4D80-AD0B-0C9049DD7181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F729F1F0-3C23-4D80-AD0B-0C9049DD7181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F729F1F0-3C23-4D80-AD0B-0C9049DD7181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F729F1F0-3C23-4D80-AD0B-0C9049DD7181}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BC970C1-7626-4C69-AB56-39C0B727E35A}
+	EndGlobalSection
+EndGlobal
