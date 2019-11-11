@@ -107,7 +107,7 @@ namespace RSA_Encryption
             var EncryptionArray = new long[MessageArray.Length];
             for (long i=0;i<MessageArray.Length;i++)
             {
-                var c = Math.Pow(((long)MessageArray[i]-95), EncryptionKey.Item1) % EncryptionKey.Item2;
+                var c = Math.Pow(((long)MessageArray[i]-97), EncryptionKey.Item1) % EncryptionKey.Item2;
                
                 
                 EncryptionArray[i] = (long)c;
@@ -125,7 +125,7 @@ namespace RSA_Encryption
             for (long i = 0; i < EncryptedArray.Length; i++)
             {
                 var d = Math.Pow(EncryptedArray[i], DecryptionKey.Item1) % DecryptionKey.Item2;
-                DecryptedArray[i] = (char)(d+95);
+                DecryptedArray[i] = (char)(d+97);
             }
             return new string(DecryptedArray);
         }
