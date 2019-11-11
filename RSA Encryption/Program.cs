@@ -8,7 +8,6 @@ namespace RSA_Encryption
     class Program
     {
 
-        enum Alphabet { a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z }
 
         static long p, q;
         static Tuple<long, long> EncryptionKey;
@@ -111,10 +110,6 @@ namespace RSA_Encryption
                 
                 EncryptionArray[i] = (long)c;
             }
-            foreach (long i in EncryptionArray)
-            {
-                Console.WriteLine(i);
-            }
             return EncryptionArray;
         }
 
@@ -128,12 +123,7 @@ namespace RSA_Encryption
             for (long i = 0; i < EncryptedArray.Length; i++)
             {
                 var d = Math.Pow(EncryptedArray[i], DecryptionKey.Item1) % DecryptionKey.Item2;
-                Console.WriteLine(d);
                 DecryptedArray[i] = (char)(d+95);
-            }
-            foreach (char i in DecryptedArray)
-            {
-                Console.WriteLine(i);
             }
             return new string(DecryptedArray);
         }
@@ -141,7 +131,7 @@ namespace RSA_Encryption
         {
 
 
-            long p = 11, q = 3;
+            p = 11; q = 3;
             Tuple<long, long, long,long> Keys =KeyGen(p, q);
             EncryptionKey = new Tuple<long, long>(Keys.Item1,Keys.Item4);
             DecryptionKey = new Tuple<long, long>(Keys.Item2, Keys.Item4);
@@ -149,9 +139,15 @@ namespace RSA_Encryption
             var Message = Console.ReadLine();
 
             var EncryptedMessage = Encrypt(Message, EncryptionKey);
+            Console.Write("Encrypted Message:");
+            foreach (int i in EncryptedMessage)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
+            var DecryptedMessage=Decrypt(EncryptedMessage,DecryptionKey);
 
-            Console.WriteLine(EncryptedMessage);
-            Console.WriteLine(Decrypt(EncryptedMessage,DecryptionKey));
+            Console.WriteLine("Decrypted Message: "+ DecryptedMessage);
         }
 
 
