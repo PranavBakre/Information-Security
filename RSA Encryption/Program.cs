@@ -14,13 +14,14 @@ namespace RSA_Encryption
         static Tuple<long, long> DecryptionKey;
 
 
+
         public static List<long> GeneratePrime(long num)
         {
             List<long> primes = new List<long> {2,3 };
             List<long> PrimeDivider = new List<long>();
             for (long i=4;i<=num/2;i++)
             {
-                for (long j=2;j<=Math.Ceiling((double)i/2.0);j++)
+                foreach (long j in primes)
                 {
                     if (j*j > i)
                     {
@@ -38,6 +39,7 @@ namespace RSA_Encryption
             }
             foreach (long i in primes)
             {
+
                 if (num%i==0)
                 {
                     PrimeDivider.Add(i);
