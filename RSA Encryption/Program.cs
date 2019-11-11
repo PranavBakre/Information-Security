@@ -134,7 +134,7 @@ namespace RSA_Encryption
 
 
             p = 11; q = 3;
-            Tuple<long, long, long,long> Keys =KeyGen(p, q);
+            Tuple<long, long, long, long> Keys = KeyGen(p, q);
             EncryptionKey = new Tuple<long, long>(Keys.Item1,Keys.Item4);
             DecryptionKey = new Tuple<long, long>(Keys.Item2, Keys.Item4);
             Console.WriteLine("Enter the message to be encrypted");
