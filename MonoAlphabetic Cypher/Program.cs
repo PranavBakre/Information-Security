@@ -4,14 +4,14 @@ namespace MonoAlphabetic_Cypher
 {
     class Program
     {
-        static Dictionary<char,char> D;
+        static Dictionary<char, char> D;
         static void Main(string[] args)
         {
             D = new Dictionary<char, char>();
             int n = 122;
-            for (char i=(char)97,j=(char)n;i<=n;i++,j--)
+            for (char i = (char)97, j = (char)n; i <= n; i++, j--)
             {
-                
+
                 //var d = Convert.ToChar(Console.ReadLine());
                 D.Add(i, j/*d*/);
             }
@@ -50,10 +50,10 @@ namespace MonoAlphabetic_Cypher
         {
             var EncryptedArray = EncryptedMessage.ToCharArray();
             char[] DecryptedArray = new char[EncryptedArray.Length];
-            for (int i=0;i<EncryptedArray.Length;i++)
+            for (int i = 0; i < EncryptedArray.Length; i++)
             {
 
-                foreach(KeyValuePair<char,char> K in D)
+                foreach (KeyValuePair<char, char> K in D)
                 {
                     if (K.Value == EncryptedArray[i])
                     {
@@ -63,7 +63,7 @@ namespace MonoAlphabetic_Cypher
 
             }
 
-            
+
             return new string(DecryptedArray);
         }
     }

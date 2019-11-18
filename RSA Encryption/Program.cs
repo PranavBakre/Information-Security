@@ -17,22 +17,22 @@ namespace RSA_Encryption
 
         public static List<long> GeneratePrime(long num)
         {
-            List<long> primes = new List<long> {2,3 };
+            List<long> primes = new List<long> { 2, 3 };
             List<long> PrimeDivider = new List<long>();
-            for (long i=4;i<=num/2;i++)
+            for (long i = 4; i <= num / 2; i++)
             {
                 foreach (long j in primes)
                 {
-                    if (j*j > i)
+                    if (j * j > i)
                     {
                         primes.Add(i);
                         break;
                     }
-                    else if (i%j==0)
+                    else if (i % j == 0)
                     {
 
                         break;
-                        
+
                     }
                 }
 
@@ -40,7 +40,7 @@ namespace RSA_Encryption
             foreach (long i in primes)
             {
 
-                if (num%i==0)
+                if (num % i == 0)
                 {
                     PrimeDivider.Add(i);
                 }
@@ -77,7 +77,7 @@ namespace RSA_Encryption
             return CoPrimeNo;
         }
 
-        public static Tuple<long,long,long,long> KeyGen(long p,long q)
+        public static Tuple<long, long, long, long> KeyGen(long p, long q)
         {
             var n = p * q;
             var z = (p - 1) * (q - 1);
@@ -96,12 +96,12 @@ namespace RSA_Encryption
             }
 
             Console.WriteLine(" " + d + " " + e + " " + z + " " + n);
-            return Tuple.Create(e, d, z,n);
+            return Tuple.Create(e, d, z, n);
 
         }
 
 
-        public static long[] Encrypt(string message,bool debug=false)
+        public static long[] Encrypt(string message, bool debug = false)
         {
             var MessageArray = message.ToCharArray();
             var EncryptionArray = new long[MessageArray.Length];
@@ -120,7 +120,7 @@ namespace RSA_Encryption
         }
 
 
-        public static string Decrypt(long[] EncryptedArray,bool debug=false)
+        public static string Decrypt(long[] EncryptedArray, bool debug = false)
         {
 
 
@@ -130,7 +130,7 @@ namespace RSA_Encryption
             for (long i = 0; i < EncryptedArray.Length; i++)
             {
                 //Console.WriteLine(Math.Pow(EncryptedArray[i], DecryptionKey.Item1));
-                
+
                 var d = Math.Pow(EncryptedArray[i], DecryptionKey.Item1) % DecryptionKey.Item2;
                 BigInteger e = BigInteger.ModPow(EncryptedArray[i], DecryptionKey.Item1, DecryptionKey.Item2);
                 DecryptedArray[i] = (char)e;
@@ -143,7 +143,7 @@ namespace RSA_Encryption
             }
             return new string(DecryptedArray);
         }
-        public  static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
 
@@ -156,14 +156,14 @@ namespace RSA_Encryption
 
 
             var EncryptedMessage = Encrypt(Message);
-            var DecryptedMessage=Decrypt(EncryptedMessage);
+            var DecryptedMessage = Decrypt(EncryptedMessage);
             Console.Write("Encrypted Message:");
             foreach (int i in EncryptedMessage)
             {
                 Console.Write(i);
             }
             Console.WriteLine();
-            Console.WriteLine("Decrypted Message: "+ DecryptedMessage);
+            Console.WriteLine("Decrypted Message: " + DecryptedMessage);
         }
 
 
