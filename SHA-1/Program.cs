@@ -17,8 +17,13 @@ namespace SHA_1
                 int BytesRead = file.Read(ByteFile);
                 byte[] result = sha.ComputeHash(ByteFile);
                 FileStream fout= new FileStream("ProgHash.txt",FileMode.Create);
+
+                Console.WriteLine("Text");
                 foreach (char ch in ByteFile)
                     Console.Write(ch);
+
+                Console.WriteLine("\n\n\nHash Value");
+
                 foreach (char ch in result)
                     Console.Write(ch);
                 fout.Write(result);
