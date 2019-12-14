@@ -87,7 +87,7 @@ namespace RSA_Encryption
             while (d == 0)
             {
 
-                if (i * e % z == 1)
+                if ((i * e) % z == 1)
                 {
                     d = i;
                     break;
@@ -133,6 +133,7 @@ namespace RSA_Encryption
 
                 var d = Math.Pow(EncryptedArray[i], DecryptionKey.Item1) % DecryptionKey.Item2;
                 BigInteger e = BigInteger.ModPow(EncryptedArray[i], DecryptionKey.Item1, DecryptionKey.Item2);
+                
                 DecryptedArray[i] = (char)e;
 
                 if (debug == true)
@@ -147,7 +148,7 @@ namespace RSA_Encryption
         {
 
 
-            p = 17; q = 23;
+            p = 59; q = 53;
             Tuple<long, long, long, long> Keys = KeyGen(p, q);
             EncryptionKey = new Tuple<long, long>(Keys.Item1, Keys.Item4);
             DecryptionKey = new Tuple<long, long>(Keys.Item2, Keys.Item4);
