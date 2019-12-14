@@ -136,7 +136,6 @@ namespace RSA_Encryption
                 BigInteger e = BigInteger.ModPow(EncryptedArray[i], DecryptionKey.Item1, DecryptionKey.Item2);
                 
                 DecryptedArray[i] = (char)e;
-
                 if (debug == true)
                 {
 
