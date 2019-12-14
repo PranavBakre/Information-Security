@@ -127,6 +127,7 @@ namespace RSA_Encryption
             var DecryptedArray = new char[EncryptedArray.Length];
             if (debug)
                 Console.WriteLine("\nDecryption:\n");
+
             for (long i = 0; i < EncryptedArray.Length; i++)
             {
                 //Console.WriteLine(Math.Pow(EncryptedArray[i], DecryptionKey.Item1));
